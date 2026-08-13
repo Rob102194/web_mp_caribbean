@@ -5,14 +5,12 @@ import { Search, SlidersHorizontal, X } from 'lucide-react';
 import ProductCard from './ProductCard';
 import ProductDetailModal from './ProductDetailModal';
 import Input from '@/components/ui/Input';
-import { useMode } from '@/context/ModeContext';
 import { catalog, CATEGORIES } from '@/data/catalog';
-import type { Product, SupplyType } from '@/types/product';
+import type { Product, SupplyType, UserMode } from '@/types/product';
 
 type SupplyFilter = 'todos' | SupplyType;
 
-export default function CatalogGrid() {
-  const { mode } = useMode();
+export default function CatalogGrid({ mode }: { mode: UserMode }) {
   const [search, setSearch] = useState('');
   const [category, setCategory] = useState('Todos');
   const [supplyFilter, setSupplyFilter] = useState<SupplyFilter>('todos');

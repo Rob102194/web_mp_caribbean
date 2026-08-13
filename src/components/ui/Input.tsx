@@ -1,9 +1,7 @@
-'use client';
+import type { ReactNode, InputHTMLAttributes } from 'react';
 
-import React from 'react';
-
-interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  icon?: React.ReactNode;
+interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+  icon?: ReactNode;
   label?: string;
 }
 

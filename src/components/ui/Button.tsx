@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 
 type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'whatsapp';

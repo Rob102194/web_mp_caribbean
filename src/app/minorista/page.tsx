@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ShoppingBag, Tag, Clock, MessageCircle, ArrowRight, CheckCircle } from 'lucide-react';
+import { ShoppingBag, Tag, Clock, MessageCircle, CheckCircle } from 'lucide-react';
 import CatalogGrid from '@/components/domain/CatalogGrid';
+import { WHATSAPP_NUMBER } from '@/data/catalog';
 
 export const metadata: Metadata = {
   title: 'Minorista — MP Caribbean | Consulta Disponibilidad y Precios',
@@ -34,7 +35,7 @@ export default function MinoristPage() {
                 <span className="text-gradient-teal">Minorista</span>
               </h1>
               <p className="text-slate-400 text-lg mt-2 max-w-2xl">
-                Productos de calidad importada accesibles para tu negocio o consumo personal. Consulta precio, disponibilidad y recibe atención inmediata.
+                Productos de calidad importada para tu negocio o consumo personal. Consulta disponibilidad y precio directamente, recibe atención inmediata.
               </p>
             </div>
           </div>
@@ -54,28 +55,21 @@ export default function MinoristPage() {
             ))}
           </div>
 
-          <div className="flex gap-3">
+          <div className="mt-2">
             <a
-              href="#catalogo"
-              id="minorista-cta-catalog"
-              className="flex items-center gap-2 bg-[#2DD4BF] text-[#0A0F1E] font-bold px-6 py-3 rounded-xl hover:bg-[#14B8A6] transition-colors text-sm shadow-md"
-            >
-              Ver Productos <ArrowRight size={16} />
-            </a>
-            <a
-              href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '18095550000'}?text=${encodeURIComponent('Hola, quisiera consultar disponibilidad y precios para compra al detalle.')}`}
+              href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Hola, quisiera consultar disponibilidad y precios para compra al detalle.')}`}
               target="_blank"
               rel="noopener noreferrer"
               id="minorista-whatsapp-btn"
-              className="flex items-center gap-2 bg-[#25D366] text-white font-bold px-6 py-3 rounded-xl hover:bg-[#20BA5C] transition-colors text-sm shadow-md"
+              className="inline-flex items-center gap-2 bg-[#25D366] text-white font-bold px-6 py-3 rounded-xl hover:bg-[#20BA5C] transition-colors text-sm shadow-md"
             >
-              <MessageCircle size={16} /> Consultar Ahora
+              <MessageCircle size={16} /> Consultar Disponibilidad
             </a>
           </div>
         </div>
       </section>
 
-      <CatalogGrid />
+      <CatalogGrid mode="minorista" />
     </>
   );
 }

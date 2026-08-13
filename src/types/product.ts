@@ -26,8 +26,3 @@ export interface Product {
   isPopular?: boolean;
 }
 
-export interface CatalogFilter {
-  category: string;
-  supplyType: 'todos' | SupplyType;
-  searchQuery: string;
-}

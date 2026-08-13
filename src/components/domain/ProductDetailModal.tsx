@@ -94,7 +94,7 @@ export default function ProductDetailModal({ product, mode, onClose }: ProductDe
 
         {/* Scrollable body */}
         <div className="overflow-y-auto flex-1 p-5 sm:p-6">
-          <p className="text-xs font-medium text-slate-400 uppercase tracking-wider mb-0.5">{product.brand} · {product.originCountry}</p>
+          <p className="text-xs font-medium text-slate-400 uppercase tracking-wider mb-0.5">{product.brand}</p>
           <h2 id="modal-title" className="text-2xl font-bold text-slate-900 leading-snug mb-2">{product.name}</h2>
           <p className="text-slate-600 text-sm leading-relaxed mb-5">{product.description}</p>
 
@@ -127,7 +127,7 @@ export default function ProductDetailModal({ product, mode, onClose }: ProductDe
                   <p className="text-[10px] text-slate-500">Precio sugerido</p>
                   <p className="text-2xl font-bold text-[#0D9488]">
                     {product.retailPrice != null
-                      ? `RD$ ${product.retailPrice.toLocaleString('es-DO')}`
+                      ? `USD $${product.retailPrice.toLocaleString('en-US')}`
                       : 'Consultar'}
                   </p>
                 </div>

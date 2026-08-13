@@ -3,13 +3,10 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { Menu, X, Anchor } from 'lucide-react';
-import ModeToggle from '@/components/domain/ModeToggle';
-import { useMode } from '@/context/ModeContext';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const { mode } = useMode();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -44,7 +41,7 @@ export default function Header() {
             </div>
             <div className="flex flex-col leading-none">
               <span className="text-white font-bold text-base tracking-tight">MP Caribbean</span>
-              <span className="text-[#E6A817] text-[10px] font-medium tracking-widest uppercase">Distribuidora</span>
+              <span className="text-[#E6A817] text-[10px] font-medium tracking-widest uppercase">Importadora</span>
             </div>
           </Link>
 
@@ -61,33 +58,15 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Mode Toggle + mobile menu */}
-          <div className="flex items-center gap-3">
-            <div className="hidden md:block">
-              <ModeToggle />
-            </div>
-
-            <div
-              className={[
-                'hidden md:flex items-center gap-1.5 text-xs font-medium px-2.5 py-1 rounded-full transition-all duration-300',
-                mode === 'mayorista'
-                  ? 'bg-[#E6A817]/15 text-[#F5C842]'
-                  : 'bg-[#2DD4BF]/15 text-[#2DD4BF]',
-              ].join(' ')}
-            >
-              <span className={['w-1.5 h-1.5 rounded-full', mode === 'mayorista' ? 'bg-[#F5C842]' : 'bg-[#2DD4BF]'].join(' ')} />
-              {mode === 'mayorista' ? 'Modo B2B activo' : 'Modo B2C activo'}
-            </div>
-
-            <button
-              id="mobile-menu-button"
-              onClick={() => setMenuOpen(!menuOpen)}
-              aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
-              className="lg:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-white/8 transition-colors"
-            >
-              {menuOpen ? <X size={20} /> : <Menu size={20} />}
-            </button>
-          </div>
+          {/* Mobile menu button */}
+          <button
+            id="mobile-menu-button"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
+            className="lg:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-white/8 transition-colors"
+          >
+            {menuOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
         </div>
       </div>
 
@@ -95,9 +74,6 @@ export default function Header() {
       {menuOpen && (
         <div id="mobile-menu" className="lg:hidden bg-[#0D1526] border-t border-white/8 animate-fade-in">
           <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-2">
-            <div className="mb-3">
-              <ModeToggle />
-            </div>
             {navLinks.map((link) => (
               <Link
                 key={link.href}

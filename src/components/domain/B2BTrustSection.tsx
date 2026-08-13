@@ -1,53 +1,53 @@
-import { Ship, Plane, Clock, Shield, BarChart3, Award } from 'lucide-react';
+import { Ship, Clock, Shield, BarChart3, Award, FileCheck } from 'lucide-react';
 
 const trustCards = [
   {
     icon: Ship,
     title: 'Importación Marítima',
     description:
-      'Contenedores FCL y LCL desde Norteamérica, Europa y Latinoamérica. Gestionamos aduana, flete y documentación.',
-    detail: 'Tiempos: 15–45 días según origen',
-    color: '#1A2D57',
-  },
-  {
-    icon: Plane,
-    title: 'Carga Aérea Express',
-    description:
-      'Para pedidos urgentes o muestras comerciales. Cobertura desde Miami, Panamá y Bogotá directamente a Santo Domingo.',
-    detail: 'Tiempos: 2–5 días hábiles',
-    color: '#E6A817',
+      'Contenedores FCL y LCL de origen directo. Gestionamos aduana, flete y documentación para abastecer tu inventario sin complicaciones.',
+    detail: 'Tiempos: 15–45 días según modalidad',
+    color: '#38BDF8',
   },
   {
     icon: Clock,
     title: 'Disponible en Plaza',
     description:
-      'Inventario local listo para entrega inmediata. Sin espera de importación, perfecto para resurtido rápido.',
-    detail: 'Entrega: 24–72 horas en RD',
+      'Inventario local listo para entrega inmediata. El resurtido rápido que tu comercio necesita, sin esperas de importación.',
+    detail: 'Disponibilidad inmediata para tu operación',
     color: '#0D9488',
   },
   {
     icon: Shield,
-    title: 'Garantía Corporativa',
+    title: 'Garantía de Calidad',
     description:
-      'Todos nuestros productos cuentan con certificaciones sanitarias (CEDOPEX, DIGEGA) y son trazables desde origen.',
+      'Todos nuestros productos cuentan con certificaciones sanitarias internacionales (FDA / HACCP) y son trazables desde origen.',
     detail: 'Certificaciones internacionales vigentes',
-    color: '#1A2D57',
+    color: '#38BDF8',
   },
   {
     icon: BarChart3,
     title: 'Precios por Volumen',
     description:
-      'Estructura de precios escalonada: mejor precio a mayor volumen. Cotizaciones en 24 h vía WhatsApp Business.',
+      'Estructura de precios escalonada: mejor precio a mayor volumen. Cotizaciones en 24 h directamente para tu empresa.',
     detail: 'MOQ flexible según producto',
     color: '#E6A817',
   },
   {
     icon: Award,
-    title: 'Experiencia Comprobada',
+    title: 'Abastecimiento Directo',
     description:
-      'Más de 10 años distribuyendo a supermercados, hoteles, restaurantes y mayoristas en toda la región caribeña.',
-    detail: '+200 clientes activos en RD y el Caribe',
+      'Sin intermediarios innecesarios. Conectamos la producción internacional directamente con tu negocio, con máxima transparencia.',
+    detail: 'Tu aliado estratégico en importación',
     color: '#0D9488',
+  },
+  {
+    icon: FileCheck,
+    title: 'Gestión Aduanera',
+    description:
+      'Gestionamos permisos, certificados sanitarios y trámites de aduana para que tu pedido llegue sin contratiempos ni demoras.',
+    detail: 'Documentación completa incluida',
+    color: '#E6A817',
   },
 ];
 
@@ -67,7 +67,7 @@ export default function B2BTrustSection() {
             <span className="text-gradient-gold">de Clase Mundial</span>
           </h2>
           <p className="text-slate-400 max-w-2xl mx-auto text-sm leading-relaxed">
-            Conectamos fabricantes internacionales con distribuidores, cadenas de supermercados, hoteles y negocios en todo el Caribe con eficiencia, transparencia y garantía de calidad.
+            Conectamos fabricantes internacionales directamente con <strong className="text-slate-300">tu empresa</strong>, garantizando eficiencia, precios competitivos y un abastecimiento confiable para <strong className="text-slate-300">tu operación</strong>.
           </p>
         </div>
 
@@ -99,10 +99,10 @@ export default function B2BTrustSection() {
         {/* Stats bar */}
         <div className="mt-14 grid grid-cols-2 sm:grid-cols-4 gap-6 pt-10 border-t border-white/8">
           {[
-            { value: '+200', label: 'Clientes Activos' },
-            { value: '10+', label: 'Años de Experiencia' },
-            { value: '7', label: 'Categorías de Producto' },
+            { value: 'Tu MOQ', label: 'Cantidades a tu medida' },
             { value: '24h', label: 'Respuesta a Cotizaciones' },
+            { value: '7', label: 'Categorías de Producto' },
+            { value: '100%', label: 'Calidad Garantizada' },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
               <p className="text-3xl font-extrabold text-gradient-gold">{stat.value}</p>

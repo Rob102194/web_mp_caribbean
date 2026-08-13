@@ -1,9 +1,11 @@
 import Link from 'next/link';
-import { Anchor, Phone, Mail, MapPin, Share2, Globe, ExternalLink } from 'lucide-react';
+import { Anchor, Mail, Share2, Globe, ExternalLink, MessageCircle } from 'lucide-react';
+import { WHATSAPP_NUMBER } from '@/data/catalog';
+
+// Static year: update on new deploy or migrate Footer to 'use client' if dynamic year is needed
+const COPYRIGHT_YEAR = 2026;
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
-
   return (
     <footer id="contacto" className="bg-[#0A0F1E] text-slate-400 border-t border-white/5">
       {/* Main footer */}
@@ -21,7 +23,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-sm leading-relaxed text-slate-500 mb-5">
-              Soluciones de distribución e importación mayorista para el mercado caribeño. Más de 10 años conectando productores con negocios.
+              Soluciones de importación y distribución diseñadas para potenciar tu empresa. Tu aliado estratégico en abastecimiento internacional.
             </p>
             <div className="flex gap-3">
               {[
@@ -68,13 +70,16 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Contacto</h3>
             <ul className="space-y-3 text-sm">
-              <li className="flex items-start gap-2.5">
-                <MapPin size={15} className="text-[#E6A817] mt-0.5 shrink-0" />
-                <span>Santo Domingo, República Dominicana</span>
-              </li>
               <li className="flex items-center gap-2.5">
-                <Phone size={15} className="text-[#E6A817] shrink-0" />
-                <a href="tel:+18095550000" className="hover:text-[#E6A817] transition-colors">+1 (809) 555-0000</a>
+                <MessageCircle size={15} className="text-[#E6A817] shrink-0" />
+                <a
+                  href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Hola, quisiera más información sobre sus servicios.')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#E6A817] transition-colors"
+                >
+                  Cotización Directa
+                </a>
               </li>
               <li className="flex items-center gap-2.5">
                 <Mail size={15} className="text-[#E6A817] shrink-0" />
@@ -94,7 +99,7 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-white/5 py-5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-600">
-          <span>© {currentYear} MP Caribbean Distribuidora. Todos los derechos reservados.</span>
+          <span>© {COPYRIGHT_YEAR} MP Caribbean Distribuidora. Todos los derechos reservados.</span>
           <div className="flex gap-4">
             <Link href="#" className="hover:text-slate-400 transition-colors">Términos</Link>
             <Link href="#" className="hover:text-slate-400 transition-colors">Privacidad</Link>

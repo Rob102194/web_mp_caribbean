@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import { MessageCircle, ChevronDown, Building2, ShoppingBag, ArrowRight } from 'lucide-react';
-import CatalogGrid from '@/components/domain/CatalogGrid';
+import FeaturedProducts from '@/components/domain/FeaturedProducts';
 import B2BTrustSection from '@/components/domain/B2BTrustSection';
+import { WHATSAPP_NUMBER } from '@/data/catalog';
 
 export default function HomePage() {
   return (
@@ -25,74 +26,39 @@ export default function HomePage() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 grid lg:grid-cols-2 gap-14 items-center">
           {/* Left */}
           <div className="animate-fade-in">
-            <div className="inline-flex items-center gap-2 bg-[#E6A817]/15 border border-[#E6A817]/30 rounded-full px-4 py-1.5 text-xs font-semibold text-[#F5C842] mb-6">
-              <span className="w-2 h-2 rounded-full bg-[#F5C842] animate-pulse" />
-              Plataforma Mayorista &amp; Minorista
-            </div>
-
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
-              Distribuimos{' '}
-              <span className="text-gradient-gold">lo mejor</span>
+              Abastecemos{' '}
+              <span className="text-gradient-gold">tu negocio</span>
               <br />
-              del mundo al{' '}
-              <span className="text-gradient-teal">Caribe</span>
+              con{' '}
+              <span className="text-gradient-teal">lo mejor</span>
+              <br />
+              del mercado internacional
             </h1>
 
-            <p className="text-slate-400 text-lg leading-relaxed mb-8 max-w-lg">
-              Importación mayorista, venta en plaza y distribución minorista desde un solo lugar. Cotiza en segundos vía WhatsApp Business.
+            <p className="text-slate-400 text-lg leading-relaxed mb-10 max-w-lg">
+              Importación mayorista y distribución adaptada a las necesidades de tu empresa. Solicita tu cotización directa y recibe respuesta en menos de 24 horas.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-3">
-              <a
-                href="#catalogo"
-                id="hero-cta-catalog"
-                className="flex items-center justify-center gap-2 bg-[#E6A817] text-[#0A0F1E] font-bold px-7 py-3.5 rounded-xl hover:bg-[#F5C842] transition-colors shadow-lg hover:shadow-[#E6A817]/30 text-base"
-              >
-                Ver Catálogo <ArrowRight size={18} />
-              </a>
+            <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/mayorista"
                 id="hero-cta-mayorista"
-                className="flex items-center justify-center gap-2 bg-white/8 text-white font-semibold px-7 py-3.5 rounded-xl hover:bg-white/15 border border-white/15 transition-colors text-base"
+                className="flex items-center justify-center gap-2.5 bg-[#E6A817] text-[#0A0F1E] font-bold px-7 py-4 rounded-xl hover:bg-[#F5C842] transition-all duration-200 shadow-lg hover:shadow-[#E6A817]/30 text-base group"
               >
-                <Building2 size={18} /> Soy Mayorista
+                <Building2 size={18} className="group-hover:scale-110 transition-transform" />
+                Canal Mayorista
+                <ArrowRight size={16} />
               </Link>
-            </div>
-
-            {/* Quick mode cards */}
-            <div className="mt-10 grid grid-cols-2 gap-3">
-              {[
-                {
-                  icon: Building2,
-                  title: 'Mayorista',
-                  desc: 'MOQ, importación y precios por volumen',
-                  href: '/mayorista',
-                  accent: '#E6A817',
-                },
-                {
-                  icon: ShoppingBag,
-                  title: 'Minorista',
-                  desc: 'Precio unitario y consulta inmediata',
-                  href: '/minorista',
-                  accent: '#2DD4BF',
-                },
-              ].map((card) => (
-                <Link
-                  key={card.title}
-                  href={card.href}
-                  id={`hero-mode-${card.title.toLowerCase()}`}
-                  className="glass rounded-xl p-4 hover:bg-white/15 transition-all duration-200 group"
-                >
-                  <div
-                    className="w-8 h-8 rounded-lg flex items-center justify-center mb-2 transition-transform group-hover:scale-110"
-                    style={{ backgroundColor: `${card.accent}20` }}
-                  >
-                    <card.icon size={16} style={{ color: card.accent }} />
-                  </div>
-                  <p className="text-white text-sm font-bold">{card.title}</p>
-                  <p className="text-slate-400 text-xs mt-0.5 leading-snug">{card.desc}</p>
-                </Link>
-              ))}
+              <Link
+                href="/minorista"
+                id="hero-cta-minorista"
+                className="flex items-center justify-center gap-2.5 bg-[#2DD4BF]/15 text-[#2DD4BF] font-bold px-7 py-4 rounded-xl hover:bg-[#2DD4BF]/25 border border-[#2DD4BF]/40 transition-all duration-200 text-base group"
+              >
+                <ShoppingBag size={18} className="group-hover:scale-110 transition-transform" />
+                Canal Minorista
+                <ArrowRight size={16} />
+              </Link>
             </div>
           </div>
 
@@ -107,9 +73,9 @@ export default function HomePage() {
                 <MessageCircle size={28} className="text-[#25D366]" strokeWidth={1.8} />
               </div>
 
-              <h3 className="text-white font-bold text-xl mb-2">WhatsApp Business</h3>
-              <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                Recibe tu cotización en menos de 24 horas. Sin formularios complicados.
+              <h3 className="text-white font-bold text-xl mb-2">Cotización Directa</h3>
+              <p className="text-slate-300 text-sm leading-relaxed mb-6">
+                Recibe tu cotización personalizada en menos de 24 horas. Sin formularios complicados.
               </p>
 
               <div className="space-y-2 mb-6">
@@ -122,7 +88,7 @@ export default function HomePage() {
               </div>
 
               <a
-                href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '18095550000'}?text=${encodeURIComponent('Hola, me gustaría recibir más información sobre sus productos y precios.')}`}
+                href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Hola, me gustaría recibir más información sobre sus productos y precios.')}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 id="hero-whatsapp-btn"
@@ -144,8 +110,8 @@ export default function HomePage() {
       {/* ─── B2B Trust Section ─── */}
       <B2BTrustSection />
 
-      {/* ─── Catalog ─── */}
-      <CatalogGrid />
+      {/* ─── Featured Products ─── */}
+      <FeaturedProducts />
     </>
   );
 }

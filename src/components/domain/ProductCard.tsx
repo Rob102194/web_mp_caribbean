@@ -70,7 +70,7 @@ export default function ProductCard({ product, mode, onDetail }: ProductCardProp
       {/* Content */}
       <div className="flex flex-col flex-1 p-4 gap-3">
         <div>
-          <p className="text-xs font-medium text-slate-400 uppercase tracking-wider mb-0.5">{product.brand} · {product.originCountry}</p>
+          <p className="text-xs font-medium text-slate-500 uppercase tracking-wider mb-0.5">{product.brand}</p>
           <h3 className="text-slate-900 font-bold text-base leading-snug line-clamp-2">{product.name}</h3>
           <p className="text-slate-500 text-xs mt-1 line-clamp-2 leading-relaxed">{product.description}</p>
         </div>
@@ -97,7 +97,7 @@ export default function ProductCard({ product, mode, onDetail }: ProductCardProp
                 <p className="text-[10px] font-medium text-slate-500 uppercase tracking-wider">Precio unitario</p>
                 <p className="text-sm font-bold text-[#0D9488]">
                   {product.retailPrice != null
-                    ? `RD$ ${product.retailPrice.toLocaleString('es-DO')}`
+                    ? `USD $${product.retailPrice.toLocaleString('en-US')}`
                     : 'Consultar'}
                 </p>
               </div>

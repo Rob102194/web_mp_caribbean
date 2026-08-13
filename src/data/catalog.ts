@@ -26,7 +26,7 @@ export const catalog: Product[] = [
     retailPrice: 485,
     wholesalePriceRange: 'Cotización según volumen',
     supplyType: 'plaza',
-    originCountry: 'Argentina',
+    originCountry: 'Calidad Premium',
     features: ['Sin colesterol', 'Alto punto de humo', 'Certificado HACCP', 'Apto uso industrial'],
     specifications: [
       { label: 'Contenido', value: '5 litros' },
@@ -49,7 +49,7 @@ export const catalog: Product[] = [
     retailPrice: 1250,
     wholesalePriceRange: 'Cotización según volumen',
     supplyType: 'importacion',
-    originCountry: 'Países Bajos',
+    originCountry: 'Importación Directa',
     features: ['Certificado EU', 'Cadena de frío garantizada', 'Maduración 6 meses'],
     specifications: [
       { label: 'Peso por pieza', value: '4–5 kg aprox.' },
@@ -69,9 +69,9 @@ export const catalog: Product[] = [
     moq: 100,
     moqUnit: 'Kg',
     retailPrice: 185,
-    wholesalePriceRange: 'Desde RD$140/kg (volumen mínimo 100 kg)',
+    wholesalePriceRange: 'Cotización según volumen',
     supplyType: 'plaza',
-    originCountry: 'República Dominicana',
+    originCountry: 'Grado Hostelero',
     features: ['Sin conservantes artificiales', 'Proceso ISO 22000', 'Entrega refrigerada'],
     specifications: [
       { label: 'Presentación', value: 'Bolsa 500 g × 20 und' },
@@ -92,7 +92,7 @@ export const catalog: Product[] = [
     retailPrice: 2800,
     wholesalePriceRange: 'Cotización FOB/CIF según volumen',
     supplyType: 'importacion',
-    originCountry: 'Brasil',
+    originCountry: 'Importación Directa',
     features: ['Grano uniforme', 'Humedad <14%', 'Certificado fitosanitario', 'Palletizado'],
     specifications: [
       { label: 'Peso por saco', value: '50 kg' },
@@ -115,7 +115,7 @@ export const catalog: Product[] = [
     retailPrice: 95,
     wholesalePriceRange: 'Cotización según volumen',
     supplyType: 'ambos',
-    originCountry: 'República Dominicana',
+    originCountry: 'Calidad Premium',
     features: ['100% natural', 'Sin azúcar añadida', 'Proceso UHT', 'Tetra Pak'],
     specifications: [
       { label: 'Contenido', value: '1 litro' },
@@ -137,7 +137,7 @@ export const catalog: Product[] = [
     retailPrice: 75,
     wholesalePriceRange: 'Cotización s/volumen (contenedor disponible)',
     supplyType: 'importacion',
-    originCountry: 'Ecuador',
+    originCountry: 'Certificación Internacional',
     features: ['Certificación MSC', 'Sin BPA en lata', 'Captura sostenible', 'Libre de mercurio'],
     specifications: [
       { label: 'Peso neto', value: '170 g' },
@@ -160,7 +160,7 @@ export const catalog: Product[] = [
     retailPrice: 420,
     wholesalePriceRange: 'Cotización según volumen',
     supplyType: 'plaza',
-    originCountry: 'México',
+    originCountry: 'Grado Hostelero',
     features: ['Food service', 'Sin HFCS', 'Certificado Kosher', 'Apto cadena hotelera'],
     specifications: [
       { label: 'Contenido', value: '3.5 kg' },
@@ -182,7 +182,7 @@ export const catalog: Product[] = [
     retailPrice: 8500,
     wholesalePriceRange: 'FOB/CIF cotización por contenedor',
     supplyType: 'importacion',
-    originCountry: 'Nueva Zelanda',
+    originCountry: 'Importación Directa',
     features: ['Spray dried', 'Alta solubilidad', 'Certificado Halal', 'Certificado Kosher'],
     specifications: [
       { label: 'Grasa mínima', value: '26%' },

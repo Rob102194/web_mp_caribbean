@@ -1,12 +1,13 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Building2, Package, Globe, Ship, Plane, ArrowRight, MessageCircle } from 'lucide-react';
+import { Building2, Package, Globe, Ship, MessageCircle } from 'lucide-react';
 import CatalogGrid from '@/components/domain/CatalogGrid';
+import { WHATSAPP_NUMBER } from '@/data/catalog';
 
 export const metadata: Metadata = {
   title: 'Mayorista — MP Caribbean | Importación y Distribución al Por Mayor',
   description:
-    'Cotizaciones por volumen, importación directa FOB/CIF y disponibilidad en plaza para distribuidores, supermercados y cadenas hoteleras en el Caribe.',
+    'Cotizaciones por volumen, importación directa FOB/CIF y disponibilidad en plaza para distribuidores, supermercados y cadenas hoteleras. Soluciones a la medida de tu empresa.',
 };
 
 export default function MayoristaPage() {
@@ -34,7 +35,7 @@ export default function MayoristaPage() {
                 <span className="text-gradient-gold">Mayorista</span>
               </h1>
               <p className="text-slate-400 text-lg mt-2 max-w-2xl">
-                Soluciones de importación directa y distribución al por mayor para supermercados, cadenas hoteleras, restaurantes y distribuidores regionales.
+                Soluciones de importación directa y distribución al por mayor diseñadas para potenciar tu operación. Abastecemos a supermercados, cadenas hoteleras, restaurantes y distribuidores con eficiencia y transparencia.
               </p>
             </div>
           </div>
@@ -44,8 +45,7 @@ export default function MayoristaPage() {
             {[
               { icon: Package, label: 'MOQ Flexible' },
               { icon: Ship, label: 'Importación Marítima FCL/LCL' },
-              { icon: Plane, label: 'Carga Aérea Express' },
-              { icon: Globe, label: 'Cobertura Regional Caribe' },
+              { icon: Globe, label: 'Cobertura Internacional' },
             ].map(({ icon: Icon, label }) => (
               <div
                 key={label}
@@ -57,30 +57,22 @@ export default function MayoristaPage() {
             ))}
           </div>
 
-          {/* CTA */}
-          <div className="mt-10 flex gap-3">
+          {/* CTA — único botón de acción */}
+          <div className="mt-10">
             <a
-              href="#catalogo"
-              id="mayorista-cta-catalog"
-              className="flex items-center gap-2 bg-[#E6A817] text-[#0A0F1E] font-bold px-6 py-3 rounded-xl hover:bg-[#F5C842] transition-colors text-sm shadow-md"
-            >
-              Ver Catálogo Mayorista <ArrowRight size={16} />
-            </a>
-            <a
-              href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '18095550000'}?text=${encodeURIComponent('Hola, soy distribuidor y deseo cotizar al por mayor.')}`}
+              href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Hola, soy distribuidor y deseo cotizar al por mayor.')}`}
               target="_blank"
               rel="noopener noreferrer"
               id="mayorista-whatsapp-btn"
-              className="flex items-center gap-2 bg-[#25D366] text-white font-bold px-6 py-3 rounded-xl hover:bg-[#20BA5C] transition-colors text-sm shadow-md"
+              className="inline-flex items-center gap-2 bg-[#25D366] text-white font-bold px-6 py-3 rounded-xl hover:bg-[#20BA5C] transition-colors text-sm shadow-md"
             >
-              <MessageCircle size={16} /> WhatsApp Business
+              <MessageCircle size={16} /> Solicitar Cotización
             </a>
           </div>
         </div>
       </section>
 
-      {/* Catalog (mode is read from context — user should set it to mayorista) */}
-      <CatalogGrid />
+      <CatalogGrid mode="mayorista" />
     </>
   );
 }

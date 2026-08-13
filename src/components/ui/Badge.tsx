@@ -1,10 +1,10 @@
-import React from 'react';
+import type { ReactNode } from 'react';
 
 type BadgeVariant = 'gold' | 'navy' | 'teal' | 'green' | 'slate' | 'red';
 
 interface BadgeProps {
   variant?: BadgeVariant;
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
 }
 
